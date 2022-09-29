@@ -37,12 +37,15 @@ const MarketSelect: FunctionComponent<MarketSelectProps> = ({
     <SliderContainer>
       <SliderLabel>Filter by Market</SliderLabel>
       <Form.Select
+        data-test="component-select"
         aria-label="Filter by market"
         style={{ width: "150px" }}
         onChange={(e) => handleMarket(e)}
       >
-        {options.map((option) => (
-          <option value={option.value}>{option.label}</option>
+        {options.map((option, key) => (
+          <option key={key} value={option.value}>
+            {option.label}
+          </option>
         ))}
       </Form.Select>
     </SliderContainer>

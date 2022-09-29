@@ -31,11 +31,13 @@ export default function App() {
   }, [market]);
 
   return (
-    <Home>
+    <Home data-test="component-app">
       <MarketSelect setMarket={setMarket} />
-      {slides.map((slide, slideIndex) => (
-        <Slides slide={slide} slideIndex={slideIndex} />
-      ))}
+      <div data-test="component-slides">
+        {slides.map((slide, slideIndex) => (
+          <Slides slide={slide} slideIndex={slideIndex} />
+        ))}
+      </div>
     </Home>
   );
 }
