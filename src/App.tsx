@@ -24,7 +24,7 @@ export default function App() {
 
   useEffect(() => {
     fetch(
-      `https://cors.rookiewise.com/https://api-${market}.exoticca.com/api/home`
+      `${process.env.REACT_APP_CUSTOM_CORS}/https://api-${market}.exoticca.com/api/home`
     )
       .then((response) => response.json())
       .then((data) => setSlides(data.slides));

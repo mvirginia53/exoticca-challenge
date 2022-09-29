@@ -1,4 +1,4 @@
-import React, { Component, Fragment, FunctionComponent } from "react";
+import React, { FunctionComponent } from "react";
 import Form from "react-bootstrap/Form";
 import styled from "styled-components";
 import "./MarketSelect.css";
@@ -42,7 +42,7 @@ const MarketSelect: FunctionComponent<MarketSelectProps> = ({
         onChange={(e) => handleMarket(e)}
       >
         {options.map((option) => (
-          <option>{option.label}</option>
+          <option value={option.value}>{option.label}</option>
         ))}
       </Form.Select>
     </SliderContainer>
